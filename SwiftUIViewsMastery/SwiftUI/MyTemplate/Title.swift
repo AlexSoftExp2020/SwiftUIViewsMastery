@@ -9,8 +9,8 @@ import SwiftUI
 
 struct Title: View {
     var body: some View {
-        Text("Title")
-            .font(.largeTitle)
+        Text("Title") // Create text on the screen
+            .font(.largeTitle) // Use a font modifier to make text large
     }
 }
 

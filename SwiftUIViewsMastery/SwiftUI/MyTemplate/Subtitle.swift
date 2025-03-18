@@ -14,8 +14,8 @@ struct Subtitle: View {
                 .font(.largeTitle)
             
             Text("Subtitle")
-                .font(.title)
-                .foregroundStyle(Color.gray)
+                .font(.title) // Set to be the second largest font.
+                .foregroundStyle(Color.gray) // Change text color to gray.
         }
     }
 }

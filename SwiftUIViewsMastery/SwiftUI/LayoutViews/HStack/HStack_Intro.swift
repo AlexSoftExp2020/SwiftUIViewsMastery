@@ -9,7 +9,19 @@ import SwiftUI
 
 struct HStack_Intro: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 40) {
+            HeaderView("HStack",
+                       subtitle: "Introduction",
+                       desc: "An HStack will horizontally arrange other views within it.",
+                       back: .orange)
+            
+            HStack {
+                Text("View 1")
+                Text("View 2")
+                Text("View 3")
+            }
+        }
+        .font(.title)
     }
 }
 

@@ -9,10 +9,18 @@ import SwiftUI
 
 struct Preview_DarkMode: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Previews").font(.largeTitle)
+            Text("Dark Mode").foregroundStyle(.gray)
+            Text("By default, your preview will show in light mode. To see it in dark mode, you can use the environment modifier.")
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.red)
+                .foregroundStyle(.white)
+        }.font(.title)
     }
 }
 
 #Preview {
-    Preview_DarkMode()
+    Preview_DarkMode().preferredColorScheme(.dark)
 }

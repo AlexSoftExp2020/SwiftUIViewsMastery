@@ -25,7 +25,7 @@ struct ViewSizes_Push_Out: View {
                 .overlay(
                     Image(systemName: "arrow.up.left")
                         .padding(), // Add spacing around the symbol
-                    alignment: .topLeading)
+                    alignment: .topLeading) // ALign within the layer
                 .overlay(
                     Image(systemName: "arrow.up.right")
                         .padding(),

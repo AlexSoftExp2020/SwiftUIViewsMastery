@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct TeamFooterView: View {
+    var team: Data.Team
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            Text("Total")
+                .font(.title2)
+            Text("\(team.people.count)")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+        }
+        .frame(width: 60, height: 100)
+        .background(Rectangle()
+            .fill(Color.yellow)
+            .opacity(0.9))
+        .padding(.bottom, 8)
     }
 }
 

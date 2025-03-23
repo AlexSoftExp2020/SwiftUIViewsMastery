@@ -16,6 +16,7 @@ struct Grid_Intro: View {
                     .overlay(Text("Column 2"))
                     .frame(height: 50)
             }
+            
             GridRow {
                 Text("Column 1")
             }

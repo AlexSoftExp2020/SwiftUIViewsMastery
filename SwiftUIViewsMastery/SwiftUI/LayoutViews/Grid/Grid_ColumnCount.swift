@@ -9,7 +9,27 @@ import SwiftUI
 
 struct Grid_ColumnCount: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid {
+            
+            GridRow {
+                ForEach(1..<3) { number in
+                    Image(systemName: "\(number).square")
+                }
+            }
+            
+            GridRow {
+                ForEach(1..<5) { number in
+                    Image(systemName: "\(number).square")
+                }
+            }
+            
+            GridRow {
+                ForEach(1..<8) { number in
+                    Image(systemName: "\(number).square")
+                }
+            }
+        }
+        .font(.largeTitle)
     }
 }
 

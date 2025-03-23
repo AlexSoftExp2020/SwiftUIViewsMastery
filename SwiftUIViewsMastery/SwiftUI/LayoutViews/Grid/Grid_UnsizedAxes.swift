@@ -9,7 +9,23 @@ import SwiftUI
 
 struct Grid_UnsizedAxes: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid {
+            GridRow {
+                Color.blue.opacity(0.5)
+                Color.orange.opacity(0.5)
+                    .frame(width: 75)
+                Color.red.opacity(0.5)
+            }
+            
+            GridRow {
+                Color.blue.opacity(0.5)
+                    .gridCellUnsizedAxes(.vertical)
+                Color.orange.opacity(0.5)
+                    .gridCellUnsizedAxes(.vertical)
+                    .gridCellUnsizedAxes(.horizontal)
+                Color.red.opacity(0.5).frame(height: 150)
+            }
+        }
     }
 }
 

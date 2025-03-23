@@ -9,7 +9,25 @@ import SwiftUI
 
 struct ZStack_IgnoresSafeAreaEdges: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.gray
+            
+            VStack(spacing: 20) {
+                Text("ZStack")
+                    .font(.largeTitle)
+                
+                Text("Edges Ignoring Safe Area")
+                    .foregroundStyle(.white)
+                
+                Text("Ignoring the Safe Areas will extend a view to fill the whole scene.")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .foregroundStyle(.white)
+                    .background(Color.green)
+            }
+            .font(.title)
+        }
+        .ignoresSafeArea(.all)
     }
 }
 

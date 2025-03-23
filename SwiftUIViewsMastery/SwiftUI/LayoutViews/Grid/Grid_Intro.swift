@@ -9,7 +9,22 @@ import SwiftUI
 
 struct Grid_Intro: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid {
+            GridRow {
+                Text("Colomn 1")
+                Color.blue.opacity(0.5)
+                    .overlay(Text("Column 2"))
+                    .frame(height: 50)
+            }
+            GridRow {
+                Text("Column 1")
+            }
+            
+            GridRow {
+                Text("Column 1")
+                Image(systemName: "arrow.left")
+            }
+        }
     }
 }
 

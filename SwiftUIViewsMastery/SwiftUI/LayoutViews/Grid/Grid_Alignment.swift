@@ -9,7 +9,24 @@ import SwiftUI
 
 struct Grid_Alignment: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Grid(alignment: .top) {
+            GridRow {
+                Text("Top")
+                Color.blue.opacity(0.5)
+            }
+            
+            GridRow(alignment: .bottom) {
+                Text("Bottom")
+                VStack(alignment: .trailing) {
+                    Text("Top")
+                    Text("Trailing")
+                }
+                .gridCellAnchor(.topTrailing)
+                Color.blue.opacity(0.5)
+            }
+        }
+        .padding()
+        .font(.title)
     }
 }
 

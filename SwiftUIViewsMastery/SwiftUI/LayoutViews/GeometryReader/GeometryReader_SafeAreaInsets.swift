@@ -9,7 +9,22 @@ import SwiftUI
 
 struct GeometryReader_SafeAreaInsets: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HeaderView("GeometryReader",
+                   subtitle: "SafeAreaInsets",
+                   desc: "GeometryReader can also tell you the safe area insets it has.",
+                   back: .clear)
+        
+        GeometryReader { geometryProxy in
+            VStack {
+                Text("geometryProxy.safeAreaInsets.leading: \(geometryProxy.safeAreaInsets.leading)")
+                Text("geometryProxy.safeAreaInsets.trailing: \(geometryProxy.safeAreaInsets.trailing)")
+                Text("geometryProxy.safeAreaInsets.top: \(geometryProxy.safeAreaInsets.top)")
+                Text("geometryProxy.safeAreaInsets.bottom: \(geometryProxy.safeAreaInsets.bottom)")
+            }
+            .padding()
+        }
+        .background(Color.pink)
+        .foregroundStyle(.white)
     }
 }
 

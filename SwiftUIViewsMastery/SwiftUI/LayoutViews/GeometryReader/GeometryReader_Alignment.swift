@@ -9,7 +9,19 @@ import SwiftUI
 
 struct GeometryReader_Alignment: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("GeometryReader",
+                       subtitle: "Alignment",
+                       desc: "Child views within the GeometryReader are aligned in the upper left corner by default.",
+                       back: .clear)
+            
+            GeometryReader { _ in
+                Image(systemName: "arrow.up.left")
+                    .padding()
+            }
+            .background(Color.pink)
+        }
+        .font(.title)
     }
 }
 

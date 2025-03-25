@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct TeamHeaderHGridView: View {
+    var team: Data.Team
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 8) {
+            Spacer()
+            Text("Team")
+                .font(.title2)
+            Image(systemName: team.imageName)
+                .font(.system(size: 50))
+            Spacer()
+            Spacer()
+        }
+        .frame(width: 75)
+        .background(Rectangle()
+            .fill(Color.yellow)
+            .opacity(0.9))
     }
 }
 

@@ -9,7 +9,34 @@ import SwiftUI
 
 struct LazyVGrid_RowSpacing: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20.0) {
+            HeaderView("LazyVGrid",
+                       subtitle: "Row Spacing",
+                       desc: "Control the spacing between items in the LazyVGrid with the spacing modifier.")
+            
+            Text("Spacing: 0")
+            
+            let gridItems = [GridItem()]
+            
+            LazyVGrid(columns: gridItems, spacing: 0) {
+                ForEach(1..<4) { item in
+                    Image(systemName: "\(item).circle")
+                }
+                Image(systemName: "arrow.down.circle")
+            }
+            .font(.largeTitle)
+            
+            Text("Spacing: 20")
+            
+            LazyVGrid(columns: gridItems, spacing: 20) {
+                ForEach(1..<4) { item in
+                    Image(systemName: "\(item).circle")
+                }
+                Image(systemName: "arrow.down.circle")
+            }
+            .font(.largeTitle)
+        }
+        .font(.title)
     }
 }
 

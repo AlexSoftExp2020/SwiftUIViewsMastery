@@ -20,11 +20,18 @@ struct ScrollViewReader_Intro: View {
                 scrollViewProxy.scrollTo(50)
             }
             ScrollView {
-                ForEach(1..51) { index in
-                    //MARK: TODO getImage()
+                ForEach(1..<51) { index in
+                    getImage(for: index)
+                        .font(.largeTitle)
+                        .frame(height: 70)
+                        .id(index)
                 }
             }
+            Button("Scroll To Top") {
+                scrollViewProxy.scrollTo(1)
+            }
         }
+        .font(.title)
     }
     
     func getImage(for index: Int) -> some View {

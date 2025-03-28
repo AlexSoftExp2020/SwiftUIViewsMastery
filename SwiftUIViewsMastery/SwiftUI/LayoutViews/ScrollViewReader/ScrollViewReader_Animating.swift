@@ -26,6 +26,14 @@ struct ScrollViewReader_Animating: View {
             }
         }
     }
+    func getImage(for index: Int) -> some View {
+        if index == 1 || index == 50 {
+            return Image(systemName: "\(index).square.fill")
+                .foregroundStyle(Color.red)
+        }
+        return Image(systemName: "\(index).square")
+            .foregroundStyle(Color.primary)
+    }
 }
 
 #Preview {

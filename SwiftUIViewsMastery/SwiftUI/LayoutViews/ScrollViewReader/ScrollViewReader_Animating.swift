@@ -20,12 +20,20 @@ struct ScrollViewReader_Animating: View {
                 }
                 ScrollView(showsIndicators: true) {
                     ForEach(1..<51) { index in
-                        //TODO: getimage
+                        getImage(for: index)
+                            .font(.largeTitle)
+                            .frame(height: 70)
+                            .id(index)
                     }
+                }
+                Button("Animate Scrolling To Top") {
+                    withAnimation { scrollViewProxy.scrollTo(1) }
                 }
             }
         }
+        .font(.title)
     }
+    
     func getImage(for index: Int) -> some View {
         if index == 1 || index == 50 {
             return Image(systemName: "\(index).square.fill")

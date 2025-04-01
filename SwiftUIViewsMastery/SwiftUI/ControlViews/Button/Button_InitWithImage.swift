@@ -9,7 +9,26 @@ import SwiftUI
 
 struct Button_InitWithImage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 60.0) {
+            Button("With Image", image: .bookLogo) { }
+            
+            Button("With Image", image: .bookLogo) { }
+                .buttonStyle(.bordered)
+            
+            Button("With Image", image: .bookLogo) { }
+                .buttonBorderShape(.roundedRectangle)
+                .buttonStyle(.bordered)
+            
+            Button("With SF Symbol", systemImage: "paintbrush.pointed.fill") { }
+                .buttonStyle(.bordered)
+            
+            Button("With Image & Role", systemImage: "x.circle", role: .destructive) { }
+            
+            Button("With Image & Role", systemImage: "x.circle", role: .destructive) { }
+                .buttonStyle(.borderedProminent)
+        }
+        .controlSize(.extraLarge)
+        .font(.title)
     }
 }
 

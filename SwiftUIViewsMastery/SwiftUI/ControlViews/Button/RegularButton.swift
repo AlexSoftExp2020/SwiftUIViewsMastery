@@ -9,7 +9,18 @@ import SwiftUI
 
 struct RegularButton: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 40) {
+            Button("Regular Button") {
+                // Code here
+            }
+            Button {
+                // Code here
+            } label: {
+                Text("Regular Button")
+                    .bold()
+            }
+        }
+        .font(.title) // Make all fonts use the title style
     }
 }
 

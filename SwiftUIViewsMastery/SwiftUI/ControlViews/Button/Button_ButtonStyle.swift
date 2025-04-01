@@ -9,7 +9,24 @@ import SwiftUI
 
 struct Button_ButtonStyle: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 80) {
+            Button("Automatic") { }
+                .buttonStyle(.automatic)
+            
+            Button("Bordered") { }
+                .buttonStyle(.bordered)
+            
+            Button("BorderedProminent") { }
+                .buttonStyle(.borderedProminent)
+            
+            Button("Borderless") { }
+                .buttonStyle(.borderless)
+            
+            Button("Plain") { }
+                .buttonStyle(.plain)
+        }
+        .font(.title)
+        .tint(.purple)
     }
 }
 

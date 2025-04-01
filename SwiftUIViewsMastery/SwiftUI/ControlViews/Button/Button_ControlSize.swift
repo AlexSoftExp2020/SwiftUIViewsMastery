@@ -9,7 +9,28 @@ import SwiftUI
 
 struct Button_ControlSize: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 60.0) {
+            Button("Bordered - Mini") { }
+                .controlSize(.mini)
+            
+            Button("Bordered - Small") { }
+                .controlSize(.small)
+            
+            Button("Bordered - Regular") { }
+                .controlSize(.regular)
+            
+            Button("Bordered - Large") { }
+                .controlSize(.large)
+            
+            Button(action: {}) {
+                Text("Bordered - Large")
+                    .frame(maxWidth: .infinity)
+            }
+            .controlSize(.large)
+        }
+        .buttonStyle(.bordered)
+        .tint(.purple)
+        .font(.title)
     }
 }
 

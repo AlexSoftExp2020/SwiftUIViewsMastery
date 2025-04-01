@@ -9,7 +9,20 @@ import SwiftUI
 
 struct CUV_WithActions: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ContentUnavailableView {
+            Label("Are you sure?", systemImage: "questionmark.circle.fill")
+        } description: {
+            Text("This action will permanently delete the item.")
+        } actions: {
+            HStack(spacing: 24) {
+                Button("Cancel", role: .cancel, action: {})
+                Button("Delete", role: .destructive, action: {})
+                    .buttonStyle(.borderedProminent)
+            }
+            .fixedSize()
+            .controlSize(.regular)
+        }
+
     }
 }
 

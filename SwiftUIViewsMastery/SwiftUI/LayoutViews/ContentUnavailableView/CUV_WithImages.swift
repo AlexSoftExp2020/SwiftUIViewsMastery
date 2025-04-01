@@ -9,7 +9,15 @@ import SwiftUI
 
 struct CUV_WithImages: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ContentUnavailableView("With Image Asset",
+                                   image: "book.logo.large")
+            ContentUnavailableView("With SF Font",
+                                   systemImage: "paintbrush")
+            ContentUnavailableView {
+                Label("With Label", systemImage: "paintbrush")
+            }
+        }
     }
 }
 

@@ -9,7 +9,19 @@ import SwiftUI
 
 struct Button_Role: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 100.0) {
+            Button("Normal") { }
+            
+            Button("Destructive", role: .destructive) { }
+            
+            Button("Destructive", role: .destructive) { }
+                .buttonStyle(.borderedProminent)
+            
+            Button("Cancel", role: .cancel) { }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.large)
+        .font(.title)
     }
 }
 

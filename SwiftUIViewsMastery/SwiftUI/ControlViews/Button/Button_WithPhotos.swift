@@ -9,7 +9,24 @@ import SwiftUI
 
 struct Button_WithPhotos: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 100) {
+            Button(action: {}) {
+                Image(systemName: "yosemite")
+            }
+            
+            Button(action: {}) {
+                Image("yosemite")
+                    .renderingMode(.original)
+                    .clipShape(Capsule())
+            }
+            
+            Button(action: {}) {
+                Image("yosemite")
+                    .renderingMode(.template)
+                    .clipShape(Capsule())
+            }
+        }
+        .font(.title)
     }
 }
 

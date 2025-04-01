@@ -9,7 +9,16 @@ import SwiftUI
 
 struct CUV_Paging: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ContentUnavailableView("Look",
+                                   image: "look",
+                                   description: Text("Look through all the pictures in the book"))
+            ContentUnavailableView("Learn",
+                                   image: "learn",
+                                   description: Text("You can remember pictures 60k faster than code."))
+        }
+        .tabViewStyle(.page)
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
     }
 }
 

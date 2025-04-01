@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct Table_Intro: View {
+    @State private var colors = [
+        ColorInfo(name: "Red", desc: Color.red),
+        ColorInfo(name: "Blue", desc: Color.blue),
+        ColorInfo(name: "Purple", desc: Color.purple)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Table(colors) {
+            TableColumn("Names") { color in
+                Text(color.name)
+            }
+            TableColumn("Colors") { color in
+                color.desc
+            }
+        }
+        .font(.title)
     }
 }
 

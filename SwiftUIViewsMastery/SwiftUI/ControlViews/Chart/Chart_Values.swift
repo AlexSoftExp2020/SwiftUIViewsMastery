@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_Values: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            BarMark(x: .value("Label 1", "Day 1"),
+                    y: .value("Value", 75))
+            BarMark(x: .value("Label 2", "Day 2"),
+                    y: .value("Value", 25))
+        }
     }
 }
 

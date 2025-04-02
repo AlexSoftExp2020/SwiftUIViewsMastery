@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_Horizontal: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            BarMark(x: .value("Value", 75),
+                    y: .value("Label 1", "Day 1"))
+            BarMark(x: .value("Value", 25),
+                    y:  .value("Label 2", "Day 2"))
+        }
     }
 }
 

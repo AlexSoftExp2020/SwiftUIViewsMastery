@@ -10,7 +10,11 @@ import SwiftUI
 
 struct Chart_Basics: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            BarMark(x: PlottableValue.value("Label 1", "Day 1"))
+            BarMark(x: PlottableValue.value("Label 2", "Day 2"))
+        }
+        .padding()
     }
 }
 

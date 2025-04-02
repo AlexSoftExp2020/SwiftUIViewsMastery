@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_WithForEach: View {
+    @State private var data = [75, 25, 100, 50]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            ForEach(data, id: \.self) { datum in
+                BarMark(x: .value("Labels", "\(datum)"),
+                        y: .value("Values", datum))
+            }
+        }
     }
 }
 

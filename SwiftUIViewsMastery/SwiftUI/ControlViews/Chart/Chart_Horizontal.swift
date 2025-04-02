@@ -16,6 +16,7 @@ struct Chart_Horizontal: View {
             BarMark(x: .value("Value", 25),
                     y:  .value("Label 2", "Day 2"))
         }
+        .frame(height: 400)
     }
 }
 

@@ -21,3 +21,11 @@ struct DailyInfo: Identifiable {
         ]
     }
 }
+
+extension Date {
+    static func from(_ year: Int, _ month: Int, _ day: Int) -> Date {
+        let calendar = Calendar(identifier: .gregorian)
+        let dateComponents = DateComponents(calendar: calendar, year: year, month: month, day: day)
+        return calendar.date(from: dateComponents)!
+    }
+}

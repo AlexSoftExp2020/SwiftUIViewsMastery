@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_PointMarkCustomizations: View {
+    @State private var plots = PlotInfo.fetchData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart(plots) { plot in
+            PointMark(x: .value("Labels", plot.x),
+                      y: .value("Values", plot.y))
+            .symbol(.diamond)
+            .foregroundStyle(by: .value("Values", plot.x))
+            .symbolSize(by: .value("Values", plot.y))
+        }
+        .padding()
+        .dynamicTypeSize(.xxLarge)
     }
 }
 

@@ -15,7 +15,7 @@ struct Chart_BarMarkStacking: View {
         Chart(data) {
             BarMark(x: .value("Category", $0.x),
                     y: .value("Quantity", $0.y),
-                    stacking: .standard // Default
+                    stacking: .standard // Default (.center, .normalized, .standard, .unstacked)
             )
             .foregroundStyle(by: .value("Group", $0.group))
         }

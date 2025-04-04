@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_BarMarkStacking: View {
+    @State private var data = GroupInfo.fetchData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart(data) {
+            BarMark(x: .value("Category", $0.x),
+                    y: .value("Quantity", $0.y),
+                    stacking: .standard // Default
+            )
+            .foregroundStyle(by: .value("Group", $0.group))
+        }
+        .padding()
+        .dynamicTypeSize(.xLarge)
     }
 }
 

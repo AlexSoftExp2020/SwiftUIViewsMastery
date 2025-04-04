@@ -12,7 +12,16 @@ struct Chart_BarMarkPositionBy: View {
     @State private var data = GroupInfo.fetchData()
     
     var body: some View {
-        
+        Chart(data) {
+            BarMark(x: .value("Category", $0.x),
+                    y: .value("Quantity", $0.y),
+                    width: 32
+            )
+            .foregroundStyle(by: .value("Group", $0.group))
+            .position(by: .value("Group", $0.group))
+        }
+        .padding()
+        .dynamicTypeSize(.xLarge)
     }
 }
 

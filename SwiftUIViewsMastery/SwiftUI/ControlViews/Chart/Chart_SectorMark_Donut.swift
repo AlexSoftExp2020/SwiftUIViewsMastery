@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_SectorMark_Donut: View {
+    let ownership = Share.fetchData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Chart(ownership) { owner in
+                SectorMark(angle: .value("Share", owner.value),
+                           innerRadius: MarkDimension.fixed(40))
+                .foregroundStyle(by: .value("Owner", owner.label))
+            }
+            
+            Chart(ownership) { owner in
+                SectorMark(angle: .value("Share", owner.value),
+                           innerRadius: MarkDimension.ratio(0.5),
+                           outerRadius: MarkDimension.inset(50))
+                .foregroundStyle(by: .value("Owner", owner.label))
+            }
+        }
+        .chartLegend(position: .bottom, alignment: .center)
+        .dynamicTypeSize(.accessibility2)
+        .padding()
     }
 }
 

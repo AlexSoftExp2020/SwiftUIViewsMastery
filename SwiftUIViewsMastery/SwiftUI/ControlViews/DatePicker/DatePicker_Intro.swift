@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct DatePicker_Intro: View {
+    @State private var date = Date()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("DatePicker",
+                       subtitle: "Introduction",
+                       desc: "The DatePicker will just show a date show a date that can be tapped on like a button. You can add an optional label to it.",
+                       back: .green)
+            
+            Text("Default style pulls in:")
+            
+            DatePicker("Today",
+                       selection: $date,
+                       displayedComponents: .date)
+            .labelsHidden()
+            .padding(.horizontal)
+            
+            Text("With label:")
+            
+            DatePicker("Today",
+                       selection: $date,
+                       displayedComponents: .date)
+            .padding(.horizontal)
+        }
+        .font(.title)
     }
 }
 

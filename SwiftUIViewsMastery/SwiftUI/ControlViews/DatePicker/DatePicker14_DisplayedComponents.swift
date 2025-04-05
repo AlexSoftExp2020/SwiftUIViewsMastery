@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct DatePicker14_DisplayedComponents: View {
+    @State private var date = Date()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("DatePicker - iOS 14+",
+                       subtitle: "Displayed Components",
+                       desc: "You can show more than just a date. You can ",
+                       back: .green)
+            
+            DatePicker("Today", selection: $date, displayedComponents: .hourAndMinute)
+                .labelsHidden()
+                .padding(.horizontal)
+            
+            DatePicker("Today", selection: $date, displayedComponents: [.hourAndMinute, .date])
+                .labelsHidden()
+                .padding(.horizontal)
+                .buttonStyle(.bordered)
+        }
+        .font(.title)
     }
 }
 

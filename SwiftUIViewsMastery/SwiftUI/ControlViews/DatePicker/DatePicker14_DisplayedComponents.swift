@@ -20,7 +20,7 @@ struct DatePicker14_DisplayedComponents: View {
                 .labelsHidden()
                 .padding(.horizontal)
             
-            DatePicker("Today", selection: $date, displayedComponents: [.hourAndMinute, .date])
+            DatePicker("Today", selection: $date, displayedComponents: [.hourAndMinute, .date]) // The order of the displayed components does not affect the displayed order.
                 .labelsHidden()
                 .padding(.horizontal)
                 .buttonStyle(.bordered)

@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_AreaMarkStartEnd: View {
+    @State private var plots = Schedule.fetchData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart(plots) { plot in
+            AreaMark(x: .value("Employee", plot.employee),
+                     yStart: .value("Start", plot.hourStart),
+                     yEnd: .value("End", plot.hourEnd))
+            .foregroundStyle(.blue.gradient)
+            .interpolationMethod(.cardinal)
+        }
+        .padding()
+        .frame(height: 300)
     }
 }
 

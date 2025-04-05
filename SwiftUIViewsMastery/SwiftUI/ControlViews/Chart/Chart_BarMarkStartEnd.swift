@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import Charts
 
 struct Chart_BarMarkStartEnd: View {
+    @State private var plots = Schedule.fetchData()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 50.0) {
+            Chart(plots) { plot in
+                BarMark(xStart: .value("Start", plot.hourStart),
+                        xEnd: .value("End", plot.hourEnd),
+                        y: .value("Employee", plot.employee))
+            }
+            .chartXAxisLabel("Hours")
+            .chartXScale(domain: 5...18)
+            
+            Chart(plots) { plot in
+                BarMark(x: .value("Employee", plot.employee),
+                        yStart: .value("Start", plot.hourStart),
+                        yEnd: .value("End", plot.hourEnd))
+            }
+            .chartXAxisLabel("Employees")
+        }
+        .padding()
     }
 }
 

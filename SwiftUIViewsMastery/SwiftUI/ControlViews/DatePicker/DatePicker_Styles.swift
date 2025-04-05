@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct DatePicker_Styles: View {
+    @State private var date = Date()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            HeaderView("DatePicker",
+                       subtitle: "Styles",
+                       desc: "Graphical Style",
+                       back: .green)
+            
+            DatePicker("Birthday",
+                       selection: $date,
+                       displayedComponents: .date)
+            .datePickerStyle(.graphical)
+            .frame(width: 320)
+            
+            DescView("Wheel Style", back: .green)
+            DatePicker("Birthday", selection: $date, displayedComponents: .date)
+                .datePickerStyle(.wheel)
+                .labelsHidden()
+        }
+        .font(.title)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

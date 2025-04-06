@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct SectionTextAndImage: View {
+    var name: String
+    var image: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: image).padding(.trailing)
+            Text(name)
+        }
+        .padding()
+        .font(.title)
+        .foregroundStyle(Color.purple)
     }
 }
 
 #Preview {
-    SectionTextAndImage()
+    SectionTextAndImage(name: "SomeText", image: "circle")
 }

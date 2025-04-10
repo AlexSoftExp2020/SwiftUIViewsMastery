@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct Gauge_Intro: View {
+    @State private var progress = 0.25
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 50.0) {
+            Gauge(value: progress) {
+                Text("Default in iOS")
+            }
+            
+            Gauge(value: progress) {
+                Text("linearCapacity")
+            }
+            .gaugeStyle(.linearCapacity)
+            .tint(.purple)
+            
+            Gauge(value: progress) {
+                Text("accessoryLinear")
+            }
+            .gaugeStyle(.accessoryLinear)
+            .tint(.pink)
+            
+            Gauge(value: progress) {
+                Text("accessoryLinearCapacity")
+            }
+            .gaugeStyle(.accessoryLinearCapacity)
+        }
+        .padding(.horizontal)
+        .font(.title)
     }
 }
 

@@ -30,7 +30,8 @@ struct Form_WithControls: View {
                 TextField("", text: $textFieldData)
                     .textFieldStyle(.roundedBorder)
                 Image(systemName: "leaf.arrow.circlepath").font(.title)
-                Circle().frame(height: 30)
+                Circle()
+                    .frame(height: 30)
             }
         }
         .font(.title)

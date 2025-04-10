@@ -9,7 +9,21 @@ import SwiftUI
 
 struct Form_HeaderProminence: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                Text("You have seen that you can customize the section header style. You can also use header prominence to style the header.")
+            } header: {
+                Text("Standard Header Prominence")
+            }
+            .headerProminence(.standard)
+            
+            Section {
+                Text("Use increased header prominence to make it stand out more.")
+            } header: {
+                Text("Increased Header Prominence")
+            }
+            .headerProminence(.increased)
+        }
     }
 }
 

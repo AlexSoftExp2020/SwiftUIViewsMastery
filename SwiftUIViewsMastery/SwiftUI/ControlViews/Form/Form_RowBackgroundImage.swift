@@ -9,7 +9,27 @@ import SwiftUI
 
 struct Form_RowBackgroundImage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                Text("Images can be on a row or a section.")
+                Text("Image on one row.")
+                    .listRowBackground(Image("water")
+                        .blur(radius: 3))
+            } header: {
+                Text("Images on Rows")
+            }
+
+            Section {
+                Text("Row 1.")
+                Text("Row 2.")
+                Text("Row 3.")
+            } header: {
+                Text("Images")
+            }
+            .listRowBackground(Image("water")
+                .blur(radius: 3))
+        }
+        .font(.title2)
     }
 }
 

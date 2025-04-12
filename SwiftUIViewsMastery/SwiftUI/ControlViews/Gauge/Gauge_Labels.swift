@@ -48,8 +48,6 @@ struct Gauge_Labels: View {
             }
             .gaugeStyle(.accessoryLinear)
             .tint(.blue)
-
-
         }
     }
 }

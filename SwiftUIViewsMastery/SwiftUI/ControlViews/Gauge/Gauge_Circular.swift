@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct Gauge_Circular: View {
+    @State private var progress = 0.25
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 50.0) {
+            Gauge(value: progress, label: {})
+                .gaugeStyle(.accessoryCircular)
+            
+            Gauge(value: progress) {
+                Text("Level")
+            }
+            .gaugeStyle(.accessoryCircular)
+            .tint(.orange)
+            
+            Gauge(value: progress) {
+                Text("Level")
+                    .padding(5)
+            }
+            .gaugeStyle(.accessoryCircularCapacity)
+            .tint(.red)
+        }
     }
 }
 

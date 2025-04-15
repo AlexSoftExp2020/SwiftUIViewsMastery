@@ -9,7 +9,24 @@ import SwiftUI
 
 struct Label_Solution: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("Label",
+                       subtitle: "Solution",
+                       desc: "The Label can help with the alignment of images and text from row-to-row in a list.",
+                       back: .pink)
+            
+            List {
+                Label("Edit", systemImage: "rectangle.and.pencil.and.ellipsis")
+                Label("Archives", systemImage: "archivebox.circle")
+                Label("Document", systemImage: "camera.badge.ellipsis")
+            }
+            .padding(.horizontal)
+            .listStyle(.plain)
+            
+            DescView("The text will continue to be aligned, even if the text size changes with accessibility settings.",
+                     back: .pink)
+        }
+        .font(.title)
     }
 }
 

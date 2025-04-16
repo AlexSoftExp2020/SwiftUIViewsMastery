@@ -9,7 +9,30 @@ import SwiftUI
 
 struct List_WithStaticData: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Text("List").font(.largeTitle)
+            Text("Static Data").font(.title).foregroundStyle(.gray)
+            Text("You can show static views or data within the List view. It does not have to be bound with data. It gives you a scrollable view.")
+                .frame(maxWidth: .infinity)
+                .font(.title).padding()
+                .background(Color.green)
+                .foregroundStyle(.black)
+            
+            List {
+                Text("Line One")
+                Text("Line One")
+                Text("Line One")
+                Image("profile")
+                Button("Click Here", action: {})
+                    .foregroundStyle(.green)
+                HStack {
+                    Spacer()
+                    Text("Centered Text")
+                    Spacer()
+                }.padding()
+            }
+            .font(.title)
+        }
     }
 }
 

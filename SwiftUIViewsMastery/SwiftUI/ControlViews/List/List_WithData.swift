@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct List_WithData: View {
+    var stringArray = ["This is the simplest List", "Evans", "Lemuel James Guerrero", "Mark", "Durtschi", "Chase", "Adam", "Rodrigo", "Notice the automatic wrapping when the text is longer"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(stringArray, id: \.self) { string in
+            Text(string)
+        }
+        .font(.largeTitle) // Apply this font style to all items in the list
     }
 }
 

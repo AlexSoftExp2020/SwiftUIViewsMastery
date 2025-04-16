@@ -12,7 +12,7 @@ struct List_CustomRows: View {
     
     var body: some View {
         List(data, id: \.self) { datum in
-            //MARK: TODO CustomRow(content: datum)
+            CustomRow(content: datum)
         }
     }
 }

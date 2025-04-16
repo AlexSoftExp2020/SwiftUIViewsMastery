@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct List_MoveRow: View {
+    @State var data = ["Hit the Edit button to reorder", "Practice Coding", "Grocery shopping", "Get tickets", "Clean house", "Do laundry", "Cook dinner", "Paint room"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(data, id: \.self) { datum in
+                    Text(datum).font(Font.system(size: 24)).padding()
+                }
+                .onMove { source, destination in
+                    data.move(fromOffsets: source, toOffset: destination)
+                }
+            }
+            .navigationTitle("To Do")
+            .toolbar {
+                ToolbarItem { EditButton() }
+            }
+        }
+        .tint(.green) // Changes color of buttons
     }
 }
 

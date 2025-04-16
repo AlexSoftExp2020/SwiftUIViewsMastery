@@ -20,8 +20,8 @@ struct List_WithStaticData: View {
             
             List {
                 Text("Line One")
-                Text("Line One")
-                Text("Line One")
+                Text("Line Two")
+                Text("Line Three")
                 Image("profile")
                 Button("Click Here", action: {})
                     .foregroundStyle(.green)

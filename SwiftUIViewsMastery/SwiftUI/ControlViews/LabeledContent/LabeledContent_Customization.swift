@@ -9,7 +9,35 @@ import SwiftUI
 
 struct LabeledContent_Customization: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            LabeledContent("Label") {
+                Text("Value")
+            }
+            
+            LabeledContent("Label") {
+                Text("Value")
+                    .foregroundStyle(.purple)
+            }
+            
+            LabeledContent {
+                Text("Value")
+            } label: {
+                Text("Label")
+                    .foregroundStyle(.purple)
+            }
+            LabeledContent("Label") {
+                Text("Value")
+            }
+            .foregroundStyle(.purple)
+            
+            LabeledContent("Label") {
+                Text("Value")
+            }
+            .padding()
+            .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 16))
+        }
+        .padding()
+        .font(.title)
     }
 }
 

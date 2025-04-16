@@ -9,7 +9,15 @@ import SwiftUI
 
 struct LabeledContent_Content: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            LabeledContent("Opt in to") {
+                GroupBox {
+                    Toggle("Emails", isOn: .constant(false))
+                    Toggle("Texts", isOn: .constant(true))
+                }
+            }
+        }
+        .font(.title)
     }
 }
 

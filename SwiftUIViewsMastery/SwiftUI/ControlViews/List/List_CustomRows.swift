@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct List_CustomRows: View {
+    var data = ["Custom Rows!", "Evans", "Lemuel James Guerrero", "Mark", "Durtschi", "Chase", "Adam", "Rodrigo"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(data, id: \.self) { datum in
+            //MARK: TODO CustomRow(content: datum)
+        }
     }
 }
 

@@ -20,3 +20,18 @@ struct List_CustomRows: View {
 #Preview {
     List_CustomRows()
 }
+
+struct CustomRow: View {
+    var content: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "person.circle.fill")
+            Text(content)
+            Spacer()
+        }
+        .foregroundStyle(content == "Custom Rows!" ? Color.green : Color.primary)
+        .font(.title)
+        .padding([.top, .bottom])
+    }
+}

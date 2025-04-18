@@ -18,7 +18,7 @@ struct List_Selection_Single: View {
                 List(data, id: \.self, selection: $selection) { item in
                     Text(item)
                 }
-                Text("To do first") +
+                Text("To do first: ") +
                 Text(selection ?? "")
                     .bold()
             }

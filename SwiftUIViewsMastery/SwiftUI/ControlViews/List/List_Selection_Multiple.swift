@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct List_Selection_Multiple: View {
+    @State private var data = ["Practice Coding", "Grocery shopping", "Get tickets", "Clean house", "Do laundry", "Cook dinner", "Paint room"]
+    @State private var selections = Set<String>()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List(data, id: \.self, selection: $selections) { item in
+                Text(item)
+            }
+            .font(.title)
+            .navigationTitle("Title")
+            .toolbar { EditButton() }
+        }
     }
 }
 

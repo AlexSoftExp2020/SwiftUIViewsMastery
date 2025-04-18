@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+struct Todo: Identifiable {
+    let id = UUID()
+    var action = ""
+    var due = ""
+    var isIndented = false
+}
+
 struct List_ListRowBackground: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

@@ -16,3 +16,18 @@ struct List_HeadersAndFooters: View {
 #Preview {
     List_HeadersAndFooters()
 }
+
+struct Header: View {
+    var body: some View {
+        Image("mountains")
+            .resizable()
+            .scaledToFill()
+            .frame(maxWidth: .infinity)
+            .overlay {Text("STAFF")
+                    .font(.system(size: 120, design: .serif))
+                    .foregroundStyle(.green)
+            }
+            .padding(.horizontal, -40)
+            .padding(.top, -25)
+    }
+}

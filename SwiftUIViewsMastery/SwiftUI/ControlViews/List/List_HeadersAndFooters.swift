@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct List_HeadersAndFooters: View {
+    var data = ["Evans", "Lemuel James Guerrero", "Mark", "Durtschi", "Chase", "Rodrigo"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section {
+                ForEach(data, id: \.self) { datum in
+                    Text(datum)
+                }
+            } header: {
+                Header()
+            } footer: {
+                Text("7 people on Staff")
+            }
+        }
     }
 }
 

@@ -15,8 +15,24 @@ struct ToDoItem: Identifiable {
 }
 
 struct List_BindingWithin: View {
+    @State private var items = [ToDoItem(task: "Get Milk", done: false),
+                                ToDoItem(task: "Wash car", done: true),
+                                ToDoItem(task: "Cut grass", done: false)]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20.0) {
+            HeaderView("List",
+                       subtitle: "Binding WIthin",
+                       desc: "You can now bind list data directly controls in list rows.")
+            List($items) { $item in
+                HStack {
+                    TextField("Task", text: $item.task)
+                    Toggle("Done?", isOn: $item.done)
+                        .labelsHidden()
+                }
+            }
+        }
+        .font(.title)
     }
 }
 

@@ -9,7 +9,29 @@ import SwiftUI
 
 struct List_SafeAreaInset: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HeaderView("List",
+                       subtitle: "SafeAreaInset",
+                       desc: "You can use this modifier to overlay a view on top of another view but also offset the content of the parent view.")
+            List {
+                ForEach(1..<21) { number in
+                    Text("\(number)")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(.green, in: RoundedRectangle(cornerRadius: 10))
+                }
+            }
+            .listStyle(.plain)
+            .safeAreaInset(edge: .bottom) {
+                VStack {
+                    Divider()
+                    Text("Total: 20")
+                        .foregroundStyle(.secondary)
+                }
+                .background(.bar)
+            }
+        }
+        .font(.title)
     }
 }
 

@@ -16,7 +16,9 @@ struct List_ListItemTint: View {
                        back: .green,
                        textColor: .black)
             .layoutPriority(1)
+            
             Text("Using listItemTint")
+            
             List {
                 Label("Label", systemImage: "camera.aperture")
                     .listItemTint(Color.red)

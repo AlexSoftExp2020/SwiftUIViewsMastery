@@ -29,6 +29,7 @@ struct List_ListRowSeparator: View {
                 Text("Row 10")
             }
         }
+        .font(.title)
     }
 }
 

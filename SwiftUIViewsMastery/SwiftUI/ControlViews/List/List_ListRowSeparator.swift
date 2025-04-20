@@ -9,7 +9,26 @@ import SwiftUI
 
 struct List_ListRowSeparator: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            HeaderView("List",
+                       subtitle: "Hiding ListRowSeparator",
+                       desc: "Use the listRowSeparator to specify if separators are shown or mot.")
+            
+            List {
+                Text("Row 1")
+                Text("Row 2")
+                    .listRowSeparator(.hidden) // top and bottom
+                Text("Row 3")
+                Text("Row 4")
+                Text("Row 5")
+                Text("Row 6")
+                Text("Row 7")
+                    .listRowSeparator(.hidden, edges: .top)
+                Text("Row 8")
+                Text("Row 9")
+                Text("Row 10")
+            }
+        }
     }
 }
 

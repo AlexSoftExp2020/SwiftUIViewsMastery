@@ -9,7 +9,29 @@ import SwiftUI
 
 struct Menu_Order: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Spacer()
+            HStack(spacing: 32) {
+                Menu("Priority") {
+                    Button("Menu Item 1", action: {})
+                    Button("Menu Item 2", action: {})
+                    Button("Menu Item 3", action: {})
+                    Button("Menu Item 4", action: {})
+                    Button("Menu Item 5", action: {})
+                }
+                .menuOrder(.priority) /* Default */
+                
+                Menu("Fixed Order") {
+                    Button("Menu Item 1", action: {})
+                    Button("Menu Item 2", action: {})
+                    Button("Menu Item 3", action: {})
+                    Button("Menu Item 4", action: {})
+                    Button("Menu Item 5", action: {})
+                }
+                .menuOrder(.fixed)
+            }
+        }
+        .font(.title)
     }
 }
 

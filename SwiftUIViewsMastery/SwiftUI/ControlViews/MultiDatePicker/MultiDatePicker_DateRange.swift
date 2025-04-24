@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct MultiDatePicker_DateRange: View {
+    @State private var dates: Set<DateComponents> = []
+    
+    var range = Date()..<Calendar.current.date(byAdding: .day, value: 6, to: Date())!
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            MultiDatePicker("Date Range", selection: $dates, in: range)
+            MultiDatePicker("After Date", selection: $dates, in: Date()...)
+            MultiDatePicker("Before Date", selection: $dates, in: ..<Date())
+        }
     }
 }
 

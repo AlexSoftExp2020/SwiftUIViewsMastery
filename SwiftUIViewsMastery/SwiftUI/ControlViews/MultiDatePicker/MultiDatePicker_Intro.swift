@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct MultiDatePicker_Intro: View {
+    @State private var dates: Set<DateComponents> = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            MultiDatePicker("Data Range", selection: $dates)
+            
+            List {
+                Section("Selected Dates") {
+                    ForEach(Array(dates), id: \.self) { date in
+                        Text("\(date.month!)/\(date.day!)")
+                    }
+                }
+            }
+        }
+        .font(.title)
     }
 }
 

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct Navigation_CustomBackButton: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            NavigationLink("Go To Detail") {
+                Navigation_CustomBackButton_Detail()
+            }
+            .font(.title)
+            .navigationTitle("Navigation Views")
+        }
     }
 }
 

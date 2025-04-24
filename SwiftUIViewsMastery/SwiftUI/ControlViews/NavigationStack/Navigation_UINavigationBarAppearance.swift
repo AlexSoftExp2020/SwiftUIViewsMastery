@@ -9,7 +9,21 @@ import SwiftUI
 
 struct Navigation_UINavigationBarAppearance: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Text("")
+            }
+            .navigationTitle("Appearance")
+            .font(.title)
+        }
+        .onAppear {
+            let appearance = UINavigationBarAppearance()
+            
+            appearance.backgroundColor = UIColor(Color.green.opacity(0.25))
+            
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
 }
 

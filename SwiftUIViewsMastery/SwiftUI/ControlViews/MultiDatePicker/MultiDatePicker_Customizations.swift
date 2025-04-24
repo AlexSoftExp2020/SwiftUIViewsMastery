@@ -16,7 +16,7 @@ struct MultiDatePicker_Customizations: View {
     var body: some View {
         MultiDatePicker("Customizations", selection: $dates)
             .tint(.red)
-            .foregroundStyle(.purple)
+            .foregroundStyle(.purple) // Does nothing
             .background(.quaternary.opacity(0.5), in: RoundedRectangle(cornerRadius: 16))
             .padding()
     }

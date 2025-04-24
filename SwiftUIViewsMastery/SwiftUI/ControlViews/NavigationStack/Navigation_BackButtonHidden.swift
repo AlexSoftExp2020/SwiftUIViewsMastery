@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Navigation_BackButtonHidden: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            NavigationLink("Go TO Detail ", destination: BackButtonHiddenDetail())
+                .font(.title)
+                .navigationTitle("Navigation Views")
+        }
     }
 }
 

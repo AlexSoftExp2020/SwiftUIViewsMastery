@@ -9,7 +9,15 @@ import SwiftUI
 
 struct Navigation_BackgroundColor: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                Color.green.opacity(0.25)
+                    .ignoresSafeArea()
+                
+                Color.gray.opacity(0.25)
+            }
+            .navigationTitle("Background Color")
+        }
     }
 }
 

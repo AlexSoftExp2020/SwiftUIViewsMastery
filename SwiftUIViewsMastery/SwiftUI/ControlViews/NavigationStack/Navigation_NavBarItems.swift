@@ -9,7 +9,22 @@ import SwiftUI
 
 struct Navigation_NavBarItems: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack { }
+                .navigationTitle("Navigation Bar Buttons")
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {}) {
+                            Image(systemName: "bell.fill")
+                                .padding(.horizontal)
+                        }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Actions", action: { })
+                    }
+                }
+                .tint(.pink)
+        }
     }
 }
 

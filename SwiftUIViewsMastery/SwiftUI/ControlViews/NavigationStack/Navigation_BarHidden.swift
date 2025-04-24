@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct Navigation_BarHidden: View {
+    @State private var isHidden = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Toggle("Hide Nav Bar", isOn: $isHidden)
+                .font(.title)
+                .padding()
+                .navigationBarHidden(isHidden)
+                .navigationTitle("Hide Me")
+        }
     }
 }
 

@@ -9,7 +9,21 @@ import SwiftUI
 
 struct Navigation_CustomBackground: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Divider()
+                    .background(
+                        LinearGradient(colors: [.green, .blue],
+                                       startPoint: .leading,
+                                       endPoint: .trailing)
+                        .opacity(0.5)
+                        .shadow(.drop(radius: 2, y: 2)),
+                        ignoresSafeAreaEdges: .top)
+                
+                Spacer()
+            }
+            .navigationTitle("Custom Backgorund")
+        }
     }
 }
 

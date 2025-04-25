@@ -9,7 +9,24 @@ import SwiftUI
 
 struct NavLink_WithDifferentTypes: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack(spacing: 16.0) {
+                NavigationLink(value: "NavigationLink 1") {
+                    Text("Navigate with String")
+                }
+                NavigationLink(value: "true") {
+                    Text("Navigate with Bool")
+                }
+            }
+            .navigationDestination(for: String.self) { stringValue in
+                Text("Value is: ") + Text("\(stringValue)").bold()
+            }
+            .navigationDestination(for: Bool.self) { boolValue in
+                Text("Value is: ") + Text("\(boolValue.description)").bold()
+            }
+            .navigationTitle("Navigation Destination")
+        }
+        .font(.title)
     }
 }
 

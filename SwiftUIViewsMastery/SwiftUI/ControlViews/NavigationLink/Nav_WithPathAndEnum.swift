@@ -14,8 +14,27 @@ enum Screens {
 }
 
 struct Nav_WithPathAndEnum: View {
+    @State private var navPath: [Screens] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navPath) {
+            VStack {
+                Button("Deep Link to Screen 2") {
+                    navPath.append(Screens.screen1)
+                    navPath.append(Screens.screen2)
+                }
+                Button("Deep Link to Screen 3") {
+                    navPath.append(Screens.screen1)
+                    navPath.append(Screens.screen2)
+                    navPath.append(Screens.screen3)
+                }
+            }
+            .navigationDestination(for: Screens.self) { screenEnum in
+                NavigationController.navigate(to: screenEnum)
+            }
+            .navigationTitle("Navigate with Path")
+        }
+        .font(.title)
     }
 }
 

@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct NavigationController: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class NavigationController {
+    @ViewBuilder
+    static func navigate(to screen: Screens) -> some View {
+        switch screen {
+        case .screen1:
+            Image(systemName: "1.square.fill").font(.largeTitle).foregroundStyle(.green)
+        case .screen2:
+            Image(systemName: "2.square.fill").font(.largeTitle).foregroundStyle(.red)
+        case .screen3:
+            Image(systemName: "3.square.fill").font(.largeTitle).foregroundStyle(.purple)
+        }
     }
-}
-
-#Preview {
-    NavigationController()
 }

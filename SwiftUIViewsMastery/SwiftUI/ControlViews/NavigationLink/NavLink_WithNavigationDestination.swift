@@ -9,7 +9,18 @@ import SwiftUI
 
 struct NavLink_WithNavigationDestination: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                NavigationLink(value: "NavigationLink 1") {
+                    Text("Navigate 1")
+                }
+            }
+            .navigationDestination(for: String.self) { stringValue in
+                Text("Value is: ") + Text("\(stringValue)").bold()
+            }
+            .navigationTitle("Navigation Destination")
+        }
+        .font(.title)
     }
 }
 

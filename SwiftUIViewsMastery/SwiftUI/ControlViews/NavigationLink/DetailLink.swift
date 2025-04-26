@@ -12,13 +12,18 @@ struct DetailLink: View {
         NavigationSplitView {
             VStack(spacing: 20) {
                 NavigationLink("Navigate There ->") {
-                    // MARK: TODO
+                    NavigationDestinationView()
                 }
+                NavigationLink("Navigate Here") {
+                    NavigationDestinationView()
+                }
+                .isDetailLink(false) // Do not navigate to detail column
             }
+            .navigationTitle("NavigationLink")
         } detail: {
-            <#code#>
+            Text("Detail")
         }
-
+        .font(.title)
     }
 }
 

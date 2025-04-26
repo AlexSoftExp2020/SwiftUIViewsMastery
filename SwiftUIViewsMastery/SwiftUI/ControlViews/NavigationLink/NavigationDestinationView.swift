@@ -12,7 +12,7 @@ struct NavigationDestinationView: View {
         VStack(spacing: 20) {
             Text("Navigation Destination")
         }
-        .navigationTitle("Destiantion")
+        .navigationTitle("Destination")
         .font(.title)
     }
 }

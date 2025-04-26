@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct NavLinkView3: View {
+    @Binding var navPath: [String]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Pop to Root View") {
+                navPath.removeAll()
+            }
+            Text("Nav Path Items:")
+            Text(navPath, format: .list(type: .and, width: .short))
+        }
+        .navigationTitle("View 3")
     }
-}
-
-#Preview {
-    NavLinkView3()
 }

@@ -19,10 +19,13 @@ struct NavLink_PopToRoot: View {
             .navigationTitle("Pop to Root")
             .navigationDestination(for: String.self) { pathValue in
                 if pathValue == "View 2" {
-            //TODO: NavLinkView2
+                    NavLinkView2(navPath: $navPath)
+                } else {
+                    NavLinkView3(navPath: $navPath)
                 }
             }
         }
+        .font(.title)
     }
 }
 

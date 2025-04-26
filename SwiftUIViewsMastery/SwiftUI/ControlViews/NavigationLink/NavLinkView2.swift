@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct NavLinkView2: View {
+    @Binding var navPath: [String]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            NavigationLink(value: "View 3") {
+                Text("Go to View 3")
+            }
+            
+            Text("Nav Path Items:")
+            Text(navPath, format: .list(type: .and, width: .short))
+        }
+        .navigationTitle("View 2")
     }
-}
-
-#Preview {
-    NavLinkView2()
 }

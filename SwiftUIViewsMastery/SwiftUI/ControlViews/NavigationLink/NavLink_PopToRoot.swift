@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct NavLink_PopToRoot: View {
+    @State private var navPath: [String] = []
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navPath) {
+            VStack {
+                NavigationLink(value: "View 2") {
+                    Text("Go to View 2")
+                }
+            }
+            .navigationTitle("Pop to Root")
+            .navigationDestination(for: String.self) { pathValue in
+                if pathValue == "View 2" {
+            //TODO: NavLinkView2
+                }
+            }
+        }
     }
 }
 

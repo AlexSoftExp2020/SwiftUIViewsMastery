@@ -16,9 +16,16 @@ struct Picker_RowsWithImages: View {
                        subtitle: "Rows with Images",
                        desc: "Row customization is limited. Adding an image will work.")
             Picker(selection: $youTuberName, label: Text("")) {
-                // MARK: TODO
+                Row(name: "Paul").tag("Paul")
+                Row(name: "Chris").tag("Chris")
+                Row(name: "Mark").tag("Mark")
+                Row(name: "Scott").tag("Scott")
+                Row(name: "Meng").tag("Meng")
             }
+            .pickerStyle(.wheel)
+            .padding(.horizontal)
         }
+        .font(.title)
     }
 }
 

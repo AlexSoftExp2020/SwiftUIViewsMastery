@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct Picker_Intro: View {
+    @State private var favoriteState =  1
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("Picker",
+                       subtitle: "Introduction",
+                       desc: "You can associate a property with the picker rows' tag values.")
+            
+            Picker("States", selection: $favoriteState) {
+                Text("California").tag(0)
+                Text("Utah").tag(1)
+                Text("Vermont").tag(2)
+            }
+            Spacer()
+        }
+        .font(.title)
     }
 }
 

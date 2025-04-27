@@ -25,3 +25,16 @@ struct Picker_RowsWithImages: View {
 #Preview {
     Picker_RowsWithImages()
 }
+
+fileprivate struct Row: View {
+    var name: String
+    
+    var body: some View {
+        return HStack {
+            Image(systemName: "person.fill")
+                .padding(.trailing)
+                .foregroundStyle(Color.red)
+            Text(name)
+        }
+    }
+}

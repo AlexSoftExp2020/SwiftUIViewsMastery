@@ -16,3 +16,16 @@ struct Picker_BindingToData: View {
 #Preview {
     Picker_BindingToData()
 }
+
+fileprivate struct Row: View {
+    var name: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "person.fill")
+                .padding(.trailing)
+                .foregroundStyle(Color.orange)
+            Text(name)
+        }
+    }
+}

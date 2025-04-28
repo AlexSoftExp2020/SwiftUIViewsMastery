@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct Scrollview_Intro: View {
+    @State private var names = ["Scott",
+                                "Mark",
+                                "Chris",
+                                "Sean",
+                                "Rod",
+                                "Meng",
+                                "Natasha",
+                                "Chase",
+                                "Evans",
+                                "Paul",
+                                "Durtschi",
+                                "Max"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ForEach(names, id: \.self) { name in
+                HStack {
+                    Text(name).foregroundStyle(.primary)
+                    Image(systemName: "checkmark.seal.fill")
+                        .foregroundStyle(.green)
+                    Spacer()
+                }
+                .padding()
+                .background(Color.white.shadow(.drop(radius: 1, y: 1)),
+                            in: RoundedRectangle(cornerRadius: 8))
+                .padding(.bottom, 4)
+            }
+            .padding(.horizontal)
+        }
+        .font(.title)
     }
 }
 

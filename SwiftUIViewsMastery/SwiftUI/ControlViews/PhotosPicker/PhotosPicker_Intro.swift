@@ -41,3 +41,21 @@ struct PhotosPicker_Intro: View {
 #Preview {
     PhotosPicker_Intro()
 }
+
+
+extension PhotosPickerItem {
+    /// Load and return an image from a PhotosPickerItem
+    @MainActor
+    func convert() async -> Image {
+        do {
+            if let data = try await self.loadTransferable(type: Data.self) {
+                if let uiImage = UIImage(data: data) {
+                    return Image(uiImage: uiImage)
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return Image(systemName: "xmark.octagon")
+    }
+}

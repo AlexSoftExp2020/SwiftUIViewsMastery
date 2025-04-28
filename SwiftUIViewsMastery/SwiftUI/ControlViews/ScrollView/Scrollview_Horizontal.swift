@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct Scrollview_Horizontal: View {
+    var items = [Color.green,
+                 Color.blue,
+                 Color.purple,
+                 Color.pink,
+                 Color.yellow,
+                 Color.orange]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { gr in
+            ScrollView(Axis.Set.horizontal, showsIndicators: true) {
+                HStack {
+                    ForEach(items, id: \.self) { item in
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(item)
+                            .frame(width: gr.size.width - 60, height: 200)
+                    }
+                }
+            }
+            .padding(.horizontal)
+        }
+        .font(.title)
     }
 }
 

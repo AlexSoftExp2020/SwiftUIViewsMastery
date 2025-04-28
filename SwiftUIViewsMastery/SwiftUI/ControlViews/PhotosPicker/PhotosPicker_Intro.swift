@@ -6,10 +6,35 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PhotosPicker_Intro: View {
+    @State private var photo: PhotosPickerItem?
+    
+    @State private var selectedImage: Image?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            PhotosPicker(selection: $photo, matching: .images) {
+                Text("Select a photo")
+            }
+            Spacer()
+            if let selectedImage {
+                Text("Selected Photo")
+                selectedImage
+                    .resizable()
+                    .scaledToFit()
+            }
+            Spacer()
+        }
+        .font(.title)
+        .onChange(of: photo) { _, newPhoto in
+            if let newPhoto {
+                Task {
+                    // MARK: TODO selectedImage = await newPhoto.convert()
+                }
+            }
+        }
     }
 }
 

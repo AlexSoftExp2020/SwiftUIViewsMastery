@@ -31,7 +31,7 @@ struct PhotosPicker_Intro: View {
         .onChange(of: photo) { _, newPhoto in
             if let newPhoto {
                 Task {
-                    // MARK: TODO selectedImage = await newPhoto.convert()
+                    selectedImage = await newPhoto.convert()
                 }
             }
         }

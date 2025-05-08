@@ -21,8 +21,8 @@ struct Navigation_Searchable_Cancel: View {
                     .fontWeight(.bold)
                 Spacer()
                 HeaderView("",
-                           subtitle: "Searchable",
-                           desc: "Use searchable to add a text field to the navigation bar drawer.")
+                           subtitle: "Cancel Search",
+                           desc: "Here is one way to cancel searching programmatically.")
             }
             .font(.title)
             .navigationTitle(Text("Navigation"))

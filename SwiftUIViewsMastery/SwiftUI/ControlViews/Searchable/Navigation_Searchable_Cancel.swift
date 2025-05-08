@@ -47,3 +47,14 @@ struct Navigation_Searchable_Cancel: View {
 #Preview {
     Navigation_Searchable_Cancel()
 }
+
+extension View {
+    func hideKeyboard() {
+        UIApplication
+            .shared
+            .sendAction(#selector(UIResponder.resignFirstResponder),
+                        to: nil,
+                        from: nil,
+                        for: nil)
+    }
+}

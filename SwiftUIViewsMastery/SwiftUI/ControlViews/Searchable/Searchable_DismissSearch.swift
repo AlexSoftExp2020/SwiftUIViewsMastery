@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct Searchable_DismissSearch: View {
+    private let locations = ["Milton",
+                             "Milltown",
+                             "Millerville",
+                             "Milwaukee",
+                             "Millcreek",
+                             "Milagro",
+                             "Milano"]
+    @State private var searchResults: [String] = []
+    @State private var locationSearch = ""
+    @State private var destination = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            //MARK: TODO SearchableSubview
+        }
+        .searchable(text: $locationSearch) {
+            ForEach(searchResults, id: \.self) { name in
+                Button(name) {
+                    destination = name
+                }
+            }
+        }
+        .onChange(of: locationSearch) { _, location in
+            searchResults = locations.filter { name in
+                name.hasPrefix(locationSearch)
+            }
+        }
     }
 }
 

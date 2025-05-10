@@ -21,7 +21,7 @@ struct Searchable_DismissSearch: View {
     
     var body: some View {
         NavigationStack {
-            //MARK: TODO SearchableSubview
+            SearchableSubview(destination: $destination)
         }
         .searchable(text: $locationSearch) {
             ForEach(searchResults, id: \.self) { name in

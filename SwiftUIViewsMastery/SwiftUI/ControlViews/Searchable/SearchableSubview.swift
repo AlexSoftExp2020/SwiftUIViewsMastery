@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct SearchableSubview: View {
+    @Binding var destination: String
+    @Environment(\.isSearching) var isSearching
+    @Environment(\.dismissSearch) var dismissSearch
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 16) {
+            Text("Where do you want to go?")
+            Text(destination)
+                .fontWeight(.bold)
+            
+            if isSearching && destination.isEmpty == false {
+                Button("Confirm") {
+                    dismissSearch()
+                }
+            }
+            Spacer()
+            HeaderView("",
+                       subtitle: "Dismiss Search",
+                       desc: "Use the dismissSearch to programatically cancel searching.")
+        }
+        .font(.title)
+        .navigationTitle(Text("Searchable"))
     }
 }
 
 #Preview {
-    SearchableSubview()
+    SearchableSubview(destination: .constant("Destination"))
 }

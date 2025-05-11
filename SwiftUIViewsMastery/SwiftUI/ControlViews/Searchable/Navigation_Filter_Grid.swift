@@ -33,6 +33,23 @@ struct Navigation_Filter_Grid: View {
         }
     }
     
+    func getDevelopers() -> [Developer] {
+        [
+            Developer(name: "Joe", image: "profile1"),
+            Developer(name: "Joe", image: "profile2"),
+            Developer(name: "Joe", image: "profile3"),
+            Developer(name: "Joe", image: "profile4"),
+            Developer(name: "Joe", image: "profile5"),
+            Developer(name: "Joe", image: "profile6"),
+            Developer(name: "Joe", image: "profile7"),
+            Developer(name: "Joe", image: "profile8"),
+            Developer(name: "Joe", image: "profile9"),
+            Developer(name: "Joe", image: "profile10"),
+            Developer(name: "Joe", image: "profile11"),
+            Developer(name: "Joe", image: "profile12")
+        ]
+    }
+    
 }
 
 #Preview {

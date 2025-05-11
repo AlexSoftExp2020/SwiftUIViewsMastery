@@ -25,6 +25,13 @@ struct Navigation_Filter_Grid: View {
         }
     }
     
+    var searchResults: [Developer] {
+        if searchText.isEmpty {
+            return devs
+        } else {
+            return devs.filter { $0.name.contains(searchText) }
+        }
+    }
     
 }
 

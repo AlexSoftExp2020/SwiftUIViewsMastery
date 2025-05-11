@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct Navigation_Filter_Grid: View {
+    @State private var devs: [Developer] = []
+    @State private var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()),
+                                        GridItem(.flexible()),
+                                        GridItem(.flexible())]) {
+                        //ForEach(..., content: <#T##(Int) -> Content#>)
+                    }
+                }
+            }
+        }
     }
 }
 

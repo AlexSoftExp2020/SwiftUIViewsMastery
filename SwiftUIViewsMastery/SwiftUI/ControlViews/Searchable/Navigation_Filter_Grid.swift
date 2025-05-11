@@ -24,8 +24,17 @@ struct Navigation_Filter_Grid: View {
             }
         }
     }
+    
+    
 }
 
 #Preview {
     Navigation_Filter_Grid()
+}
+
+
+struct Developer: Identifiable {
+    let id = UUID()
+    var name = ""
+    var image = ""
 }

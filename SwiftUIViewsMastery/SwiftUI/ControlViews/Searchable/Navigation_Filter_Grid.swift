@@ -18,9 +18,24 @@ struct Navigation_Filter_Grid: View {
                     LazyVGrid(columns: [GridItem(.flexible()),
                                         GridItem(.flexible()),
                                         GridItem(.flexible())]) {
-                        //ForEach(..., content: <#T##(Int) -> Content#>)
+                        ForEach(searchResults) { dev in
+                            Image(dev.image)
+                                .resizable()
+                                .scaledToFill()
+                        }
                     }
                 }
+                .animation(.default, value: searchText)
+                
+                HeaderView("",
+                           subtitle: "Filter - Grid",
+                           desc: "Notice when used with scrolling views, you have to pull down to show the searchable text field.")
+                .font(.title)
+            }
+            .searchable(text: $searchText, prompt: Text("Filter"))
+            .navigationTitle("Navigation")
+            .task {
+                devs = getDevelopers()
             }
         }
     }
@@ -35,18 +50,19 @@ struct Navigation_Filter_Grid: View {
     
     func getDevelopers() -> [Developer] {
         [
+            //MARK: Update
             Developer(name: "Joe", image: "profile1"),
-            Developer(name: "Joe", image: "profile2"),
-            Developer(name: "Joe", image: "profile3"),
-            Developer(name: "Joe", image: "profile4"),
-            Developer(name: "Joe", image: "profile5"),
-            Developer(name: "Joe", image: "profile6"),
-            Developer(name: "Joe", image: "profile7"),
-            Developer(name: "Joe", image: "profile8"),
-            Developer(name: "Joe", image: "profile9"),
-            Developer(name: "Joe", image: "profile10"),
-            Developer(name: "Joe", image: "profile11"),
-            Developer(name: "Joe", image: "profile12")
+            Developer(name: "Eric", image: "profile2"),
+            Developer(name: "Joey", image: "profile3"),
+            Developer(name: "Joseph", image: "profile4"),
+            Developer(name: "Lauren", image: "profile5"),
+            Developer(name: "Paola", image: "profile6"),
+            Developer(name: "Roxy", image: "profile7"),
+            Developer(name: "Marry", image: "profile8"),
+            Developer(name: "Elaine", image: "profile9"),
+            Developer(name: "Matthew", image: "profile10"),
+            Developer(name: "John", image: "profile11"),
+            Developer(name: "Josphine", image: "profile12")
         ]
     }
     

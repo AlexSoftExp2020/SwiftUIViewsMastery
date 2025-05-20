@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct SecureField_Intro: View {
+    @State private var userName = ""
+    @State private var password = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            Image("Logo")
+            
+            Spacer()
+            
+            Text("SecureField")
+                .font(.largeTitle)
+            
+            Text("Introduction")
+                .font(.title)
+                .foregroundStyle(.gray)
+            
+            Text("SecureFields, like TextFields, need to bind to a local variable.")
+            
+            TextField("user name", text: $userName)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            SecureField("password", text: $password)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            Spacer()
+        }
     }
 }
 

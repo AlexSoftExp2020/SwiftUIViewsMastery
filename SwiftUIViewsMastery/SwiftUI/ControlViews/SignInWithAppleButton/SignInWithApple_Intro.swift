@@ -10,7 +10,7 @@ import AuthenticationServices
 
 struct SignInWithApple_Intro: View {
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 15) {//
             HeaderView("SignInWithAppleButton",
                        subtitle: "Introduction",
                        desc: "This view allows you to display Apple's sign in, continue and sign up buttons.")
